@@ -22,8 +22,11 @@
 
 			/* ========== Page Styles ========== */
 
-			#bodyCell{padding:20px;}
-			#templateContainer{width:600px;}
+			.templateContainer{
+				width:540px;
+				padding-top:20px;
+				padding-bottom:20px;
+			}
 
 			/**
 			* @tab Page
@@ -50,8 +53,9 @@
 			* @section email border
 			* @tip Set the border for your email.
 			*/
-			#templateContainer{
-				/*@editable*/ border:0px solid #BBBBBB;
+			.templateContainer{
+				padding-top:10px;
+				padding-bottom:10px;	
 			}
 
 			/**
@@ -142,30 +146,22 @@
 				/*@editable*/ text-align:left;
 			}
 
+			.mainContent{
+				font-family:Verdana;
+				font-size:14px;
+				padding-top:10px;
+				padding-bottom:10px;
+			}
+
+			.secondaryContent{
+				font-family:Helvetica;
+				font-size:10px;
+				line-height: 125%;
+				padding-top:10px;
+				padding-bottom:10px;
+			}
+
 			/* ========== Header Styles ========== */
-
-			/**
-			* @tab Header
-			* @section preheader style
-			* @tip Set the background color and bottom border for your email's preheader area.
-			* @theme header
-			*/
-			#templatePreheader{
-				/*@editable*/ background-color:#FFFFFF;
-			}
-
-			/**
-			* @tab Header
-			* @section preheader text
-			* @tip Set the styling for your email's preheader text. Choose a size and color that is easy to read.
-			*/
-			.preheaderContent{
-				/*@editable*/ color:#808080;
-				/*@editable*/ font-family:Helvetica;
-				/*@editable*/ font-size:10px;
-				/*@editable*/ line-height:125%;
-				/*@editable*/ text-align:left;
-			}
 
 			/**
 			* @tab Header
@@ -246,9 +242,7 @@
 				/*@editable*/ font-size:14px;
 				/*@editable*/ line-height:150%;
 				padding-top:20px;
-				padding-right:20px;
 				padding-bottom:20px;
-				padding-left:20px;
 				/*@editable*/ text-align:left;
 			}
 
@@ -278,8 +272,11 @@
 			* @theme footer
 			*/
 			#templateFooter{
-				/*@editable*/ background-color:#F4F4F4;
-				/*@editable*/ border-top:1px solid #FFFFFF;
+
+			}
+
+			#footer{
+				background-color: #F4F4F4;
 			}
 
 			/**
@@ -294,9 +291,7 @@
 				/*@editable*/ font-size:10px;
 				/*@editable*/ line-height:150%;
 				padding-top:20px;
-				padding-right:20px;
 				padding-bottom:20px;
-				padding-left:20px;
 				/*@editable*/ text-align:left;
 			}
 
@@ -318,19 +313,20 @@
 				body, table, td, p, a, li, blockquote{-webkit-text-size-adjust:none !important;} /* Prevent Webkit platforms from changing default text sizes */
                 body{width:100% !important; min-width:100% !important;} /* Prevent iOS Mail from adding padding to the body */
 
-				/* /\/\/\/\/\/\/ MOBILE RESET STYLES /\/\/\/\/\/\/ */
-				#bodyCell{padding:10px !important;}
-
 				/* /\/\/\/\/\/\/ MOBILE TEMPLATE STYLES /\/\/\/\/\/\/ */
 
 				/* ======== Page Styles ======== */
+
+				.preheaderContent{
+					display:none;
+				}
 
 				/**
 				* @tab Mobile Styles
 				* @section template width
 				* @tip Make the template fluid for portrait or landscape view adaptability. If a fluid layout doesn't work for you, set the width to 300px instead.
 				*/
-				#templateContainer{
+				.templateContainer{
 					max-width:600px !important;
 					/*@editable*/ width:100% !important;
 				}
@@ -403,7 +399,7 @@
 				* @section body text
 				* @tip Make the body content text larger in size for better readability on small screens. We recommend a font size of at least 16px.
 				*/
-				.bodyContent{
+				.mainContent{
 					/*@editable*/ font-size:18px !important;
 					/*@editable*/ line-height:125% !important;
 				}
@@ -415,101 +411,71 @@
 				* @section footer text
 				* @tip Make the body content text larger in size for better readability on small screens.
 				*/
-				.footerContent{
+				.secondaryContent{
 					/*@editable*/ font-size:14px !important;
 					/*@editable*/ line-height:115% !important;
 				}
-
-				.footerContent a{display:block !important;} /* Place footer social and utility links on their own lines, for easier access */
 			}
 		</style>
     </head>
     <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
-    	<center>
-        	<table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable">
-            	<tr>
-                	<td align="center" valign="top" id="bodyCell">
-                    	<!-- BEGIN TEMPLATE // -->
-                    	<table border="0" cellpadding="0" cellspacing="0" id="templateContainer">
-                        	<tr>
-                            	<td align="center" valign="top">
-                                	<!-- BEGIN PREHEADER // -->
-                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templatePreheader">
-                                        <tr>
-                                        	<td valign="top">
-	                                            <div valign="top" class="preheaderContent" mc:edit="preheader_content00">
-	                                                Use this area to offer a short teaser of your email's content. Text here will show in the preview area of some email clients.
-	                                            </div>
-	                                            <!-- *|IFNOT:ARCHIVE_PAGE|* -->
-	                                            <br />
-	                                            <div valign="top" class="preheaderContent" mc:edit="preheader_content01">
-	                                                Email not displaying correctly? <a href="*|ARCHIVE|*" target="_blank">View it in your browser</a>.
-	                                            </div>
-												<!-- *|END:IF|* -->
-                                        	</td>
-											<td valign="top" style="padding-left:20px;">
-                                        		<img width="100" height="75" src="hdbyus-logo.jpg" alt="" />
-                                        	</td>
-                                        </tr>
-                                    </table>
-                                    <!-- // END PREHEADER -->
-                                </td>
-                            </tr>
-                        	<tr>
-                            	<td align="center" valign="top">
-                                	<!-- BEGIN BODY // -->
-                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateBody">
-                                        <tr>
-                                            <td valign="top" class="bodyContent" mc:edit="body_content">
-                                                <h1>Designing Your Template</h1>
-                                                <h3>Creating a good-looking email is simple</h3>
-                                                Customize your template by clicking on the style editor tabs above. Set your fonts, colors, and styles. After setting your styling is all done you can click here in this area, delete the text, and start adding your own awesome content.
-                                                <br />
-                                                <br />
-                                                <h2>Styling Your Content</h2>
-                                                <h4>Make your email easy to read</h4>
-                                                After you enter your content, highlight the text you want to style and select the options you set in the style editor in the "<em>styles</em>" drop down box. Want to <a href="http://www.mailchimp.com/kb/article/im-using-the-style-designer-and-i-cant-get-my-formatting-to-change" target="_blank">get rid of styling on a bit of text</a>, but having trouble doing it? Just use the "<em>remove formatting</em>" button to strip the text of any formatting and reset your style. 
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <!-- // END BODY -->
-                                </td>
-                            </tr>
-                        	<tr>
-                            	<td align="center" valign="top">
-                                	<!-- BEGIN FOOTER // -->
-                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateFooter">
-                                        <tr>
-                                            <td valign="top" class="footerContent" mc:edit="footer_content00">
-                                                <a href="*|TWITTER:PROFILEURL|*">Follow on Twitter</a>&nbsp;&nbsp;&nbsp;<a href="*|FACEBOOK:PROFILEURL|*">Friend on Facebook</a>&nbsp;&nbsp;&nbsp;<a href="*|FORWARD|*">Forward to Friend</a>&nbsp;
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td valign="top" class="footerContent" style="padding-top:0;" mc:edit="footer_content01">
-                                                <em>Copyright &copy; *|CURRENT_YEAR|* *|LIST:COMPANY|*, All rights reserved.</em>
-                                                <br />
-                                                *|IFNOT:ARCHIVE_PAGE|* *|LIST:DESCRIPTION|*
-                                                <br />
-                                                <br />
-                                                <strong>Our mailing address is:</strong>
-                                                <br />
-                                                *|HTML:LIST_ADDRESS_HTML|* *|END:IF|* 
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td valign="top" class="footerContent" style="padding-top:0; padding-bottom:40px;" mc:edit="footer_content02">
-                                            	<a href="*|UNSUB|*">unsubscribe from this list</a>&nbsp;&nbsp;&nbsp;<a href="*|UPDATE_PROFILE|*">update subscription preferences</a>&nbsp;
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <!-- // END FOOTER -->
-                                </td>
-                            </tr>
-                        </table>
-                        <!-- // END TEMPLATE -->
-                    </td>
-                </tr>
-            </table>
-        </center>
+        	<table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable"><tr><td align="center" valign="top" id="bodyCell">
+            	<!-- BEGIN TEMPLATE CONTAINER // -->
+                <table border="0" cellpadding="0" cellspacing="0" class="templateContainer"><tr><td align="center" valign="top">
+	            	<!-- BEGIN PREHEADER // -->
+	                <table class="preheaderContent" border="0" cellpadding="0" cellspacing="0" width="100%" id="templatePreheader"><tr>
+	                	<td mc:edit="preheader_content00" class="secondaryContent">
+	                        Use this area to offer a short teaser of your email's content. Text here will show in the preview area of some email clients.
+	                    </td>
+                        <!-- *|IFNOT:ARCHIVE_PAGE|* -->
+                        <td mc:edit="preheader_content01" class="secondaryContent">
+                            Email not displaying correctly? <a href="*|ARCHIVE|*" target="_blank">View it in your browser</a>.
+                        </td>
+						<!-- *|END:IF|* -->
+					</tr></table>
+                    <!-- // END PREHEADER -->
+                    </td></tr>
+                    <tr><td align="center" valign="top">
+					<!-- BEGIN BODY // -->
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%"><tr>
+                        <td valign="top" class="mainContent" mc:edit="body_content">
+	                        <h1>Designing Your Template</h1>
+	                        <h3>Creating a good-looking email is simple</h3>
+	                        Customize your template by clicking on the style editor tabs above. Set your fonts, colors, and styles. After setting your styling is all done you can click here in this area, delete the text, and start adding your own awesome content.
+	                        <br />
+	                        <br />
+	                        <h2>Styling Your Content</h2>
+	                        <h4>Make your email easy to read</h4>
+	                        After you enter your content, highlight the text you want to style and select the options you set in the style editor in the "<em>styles</em>" drop down box. Want to <a href="http://www.mailchimp.com/kb/article/im-using-the-style-designer-and-i-cant-get-my-formatting-to-change" target="_blank">get rid of styling on a bit of text</a>, but having trouble doing it? Just use the "<em>remove formatting</em>" button to strip the text of any formatting and reset your style.
+						</td>
+                    </tr></table>
+                    <!-- END BODY -->
+                    <!-- START LOGO THINGY -->
+					<table border="0" cellpadding="0" cellspacing="0" class="templateContainer mainContent"><tr>
+                        <td align="center" valign="top" style="padding-left:10px;padding-right:10px;">
+                            <img src="hdbyus-logo.jpg" width="100" height="75" style="display:block;" alt="" />
+                        </td><td valign="center" style="padding-left:10px;padding-right:10px;">
+							Healthdesignby.us is brought to you by <a href="#">Joyce Lee,</a> <a href="#">Matt Kenyon</a> and a local and virtual community!
+                        </td>
+                    </tr></table>
+                    <!-- END LOGO THINGY -->
+                    <table border="0" cellpadding="0" cellspacing="0" class="templateContainer mainContent"><tr><td></td></tr></table>
+                </td></tr></table>
+                <!-- END TEMPLATE CONTAINER -->
+                <div id="footer">
+				<!-- BEGIN TEMPLATE CONTAINER // -->
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" class="templateContainer"><tr><td valign="top" class="secondaryContent" mc:edit="footer_content02">
+                	<b>How did we find you?</b>
+                	<br />
+					You signed up for our list because you are interested in health, technology, and participatory design, <b>or,</b> <a href="">Joyce Lee, otherwise known as Doctor as Designer,</a> handcurated the list and wanted you to be a part of the movement. You have every right to unsubscribe, but if you do, she will be disappointed. <b>:(</b>
+                	<br />
+                	<a href="*|UNSUB|*">unsubscribe from this list</a>&nbsp;&nbsp;&nbsp;<a href="*|UPDATE_PROFILE|*">update subscription preferences</a>&nbsp;
+                	<br /><br />
+                    <em>Copyright &copy; *|CURRENT_YEAR|* *|LIST:COMPANY|*, All rights reserved.</em>
+				</td></tr></table>
+				<!-- // END TEMPLATE CONTAINER -->
+                </div>
+
+
     </body>
 </html>
